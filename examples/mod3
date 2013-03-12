@@ -1,0 +1,13 @@
+0mod3:I
+    a ~ R -> 1mod3
+    ~ 0 L -> final
+
+1mod3:
+    a ~ R -> 2mod3
+    ~ 1 L -> final
+
+2mod3:
+    a ~ R -> 0mod3
+    ~ 2 L -> final
+
+final:F

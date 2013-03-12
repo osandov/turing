@@ -1,0 +1,36 @@
+init:I
+    a ~ R -> apass
+    b ~ R -> bpass
+    ~ 1 L -> final
+
+apass:
+    a a R -> apass
+    b b R -> apass
+    ~ ~ L -> acheck
+
+acheck:
+    a ~ L -> back
+    b ~ L -> clear
+    ~ 1 L -> final
+
+bpass:
+    a a R -> bpass
+    b b R -> bpass
+    ~ ~ L -> bcheck
+
+bcheck:
+    a ~ L -> clear
+    b ~ L -> back
+    ~ 1 L -> final
+
+back:
+    a a L -> back
+    b b L -> back
+    ~ ~ R -> init
+
+clear:
+    a ~ L -> clear
+    b ~ L -> clear
+    ~ 0 L -> final
+
+final:F
